@@ -54,11 +54,21 @@ function initializeClearHistoryOnExit (settings) {
   })
 }
 
+function initializeExcludeTabsInGroups (settings) {
+  const input = document.getElementById('exclude-tabs-in-groups')
+  input.checked = settings.excludeTabsInGroups
+  input.addEventListener('change', () => {
+    settings.excludeTabsInGroups = input.checked
+    persistSettings(settings)
+  })
+}
+
 function initializeSettingsUi (settings) {
   initializeMinInactiveMinutes(settings)
   initializeMinTabsCount(settings)
   initializeMaxHistorySize(settings)
   initializeClearHistoryOnExit(settings)
+  initializeExcludeTabsInGroups(settings)
 }
 
 loadState().then(state => initializeSettingsUi(state.settings))
