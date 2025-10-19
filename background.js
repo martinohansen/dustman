@@ -4,14 +4,14 @@ loadState().then(state => {
   // make the state available via the window of the background page
   window.state = state
 
-  browser.browserAction.onClicked.addListener(() => {
+  browser.action.onClicked.addListener(() => {
     state.paused = !state.paused
     updateBrowserAction(state)
     autoclose(state)
   })
   updateBrowserAction(state)
 
-  browser.tabs.onCreated.addListener(tab => {
+  browser.tabs.onCreated.addListener(() => {
     autoclose(state)
   })
   browser.tabs.onAttached.addListener(() => autoclose(state))

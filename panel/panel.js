@@ -1,7 +1,7 @@
 'use strict'
 
 // get the background page
-const bp = browser.extension.getBackgroundPage()
+const bp = browser.runtime.getBackgroundPage()
 
 /**
  * Create a link node from a closed page info
