@@ -1,66 +1,62 @@
 <!DOCTYPE html>
-
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Dustman Settings</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../settings.css" rel="stylesheet">
-  </head>
-  <body>
-    <form>
-      <div class="form-group">
-        <label for="min-inactive-minutes">
-          Minimum background time (in minutes)
-        </label>
-        <input type="number" step="any" min="0" id="min-inactive-minutes" aria-describedby="min-inactive-minutes-descr" >
-        <p id="min-inactive-minutes-descr">
-          Dustman only closes tabs which have been in the background for this long.
-        </p>
-      </div>
+<head>
+  <meta charset="utf-8">
+  <title>Dustman Settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../settings.css" rel="stylesheet">
+</head>
+<body>
+  <div class="preference-row">
+    <div class="preference-label">
+      <span class="preference-label-text">Minimum background time (in minutes)</span>
+      <span class="preference-description">Dustman only closes tabs which have been in the background for this long.</span>
+    </div>
+    <div class="preference-control">
+      <input type="number" step="any" min="0" id="min-inactive-minutes">
+    </div>
+  </div>
 
-      <div class="form-group">
-        <label for="min-tabs-count">
-          Minimum number of tabs per window
-        </label>
-        <input type="number" min="1" id="min-tabs-count" aria-describedby="min-tabs-count-descr" >
-        <p id="min-tabs-count-descr">
-          Dustman closes tabs only in windows that have more than this many tabs.
-          Pinned tabs are not counted towards this limit, and never auto-closed.
-          While unpinned Tabs that play sound are counted towards this limit, they are also never auto-closed.
-        </p>
-      </div>
+  <div class="preference-row">
+    <div class="preference-label">
+      <span class="preference-label-text">Minimum number of tabs per window</span>
+      <span class="preference-description">Dustman closes tabs only in windows that have more than this many tabs. Pinned tabs are not counted towards this limit, and never auto-closed. While unpinned tabs that play sound are counted towards this limit, they are also never auto-closed.</span>
+    </div>
+    <div class="preference-control">
+      <input type="number" min="1" id="min-tabs-count">
+    </div>
+  </div>
 
-      <div class="form-group">
-        <label for="max-history-size">
-          Number of saved tabs
-        </label>
-        <input type="number" min="0" id="max-history-size" aria-describedby="max-history-size-descr" >
-        <p id="max-history-size-descr">
-          Dustman can save a number of tabs it has closed.
-          The list can be accessed via the garbage bin button in the toolbar.
-          Set to 0 to disable saving tabs altogether.
-        </p>
-      </div>
+  <div class="preference-row">
+    <div class="preference-label">
+      <span class="preference-label-text">Number of saved tabs</span>
+      <span class="preference-description">Dustman can save a number of tabs it has closed. The list can be accessed via the garbage bin button in the toolbar. Set to 0 to disable saving tabs altogether.</span>
+    </div>
+    <div class="preference-control">
+      <input type="number" min="0" id="max-history-size">
+    </div>
+  </div>
 
-      <div class="form-group">
-        <label for="clear-history-on-exit">
-          Clear saved tabs when firefox closes
-        </label>
-        <input type="checkbox" id="clear-history-on-exit" >
-      </div>
+  <div class="preference-row">
+    <div class="preference-label">
+      <span class="preference-label-text">Clear saved tabs when Firefox closes</span>
+    </div>
+    <div class="preference-control">
+      <input type="checkbox" id="clear-history-on-exit">
+    </div>
+  </div>
 
-      <div class="form-group">
-        <label for="exclude-tabs-in-groups">
-          Don't auto-close tabs in groups
-        </label>
-        <input type="checkbox" id="exclude-tabs-in-groups" aria-describedby="exclude-tabs-in-groups-descr" >
-        <p id="exclude-tabs-in-groups-descr">
-          When enabled, tabs that belong to a tab group will not be automatically closed.
-        </p>
-      </div>
-    </form>
-    <script src="../../lib/state.js"></script>
-    <script src="../settings.js"></script>
-  </body>
+  <div class="preference-row">
+    <div class="preference-label">
+      <span class="preference-label-text">Don't auto-close tabs in groups</span>
+      <span class="preference-description">When enabled, tabs that belong to a tab group will not be automatically closed.</span>
+    </div>
+    <div class="preference-control">
+      <input type="checkbox" id="exclude-tabs-in-groups">
+    </div>
+  </div>
+
+  <script src="../../lib/state.js"></script>
+  <script src="../settings.js"></script>
+</body>
 </html>
