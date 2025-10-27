@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
   "name": "__MSG_extensionName__",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "__MSG_extensionDescription__",
   "permissions": ["storage", "tabs", "alarms"],
   "icons": { "64": "icon.png" },
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["lib/state.js", "background.js"]
   },
   "options_ui": { "page": "settings/index.html" },
   "action": {
